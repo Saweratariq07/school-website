@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Cards</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+        } */
+    /* * body{
+width: 100%;
+} */
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .header .card {
+      position: relative;
+      overflow: hidden;
+      border: none;
+      width: 200px;
+      /* background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
+      text-align: center;
+      /* Center text within the card */
+      padding-bottom: 20px;
+      border: none;
+    }
+
+    .header .card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .header .sale-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: red;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .header .card-icons {
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      position: absolute;
+      top: 190px;
+      /* Adjusted to position icons above the image */
+      width: 100%;
+    }
+
+    .header .card-icons i {
+      font-size: 16px;
+      /* Adjusted to fit inside the 30px circle */
+      color: #333;
+      background-color: white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 5px;
+      /* Space between icons */
+    }
+
+    .header .card-text {
+      background-color: transparent;
+      border: none;
+      padding: 10px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background-color: #f8f9fa;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .pricing-container {
+      width: 80%;
+      padding-top: 100px;
+      text-align: center;
+    }
+
+    .pricing-row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .pricing-card {
+      flex: 1;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .pricing-card h3 {
+      padding-top: 25px;
+    }
+
+    .pricing-card p {
+      font-size: small;
+      font-weight: bold;
+      color: #737373;
+    }
+
+    .pricing-card h1 {
+      color: #96BB7C;
+    }
+
+    .pricing-card h6 {
+      color: #8EC2F2;
+    }
+
+    .pricing-card button {
+      background-color: #96BB7C;
+      color: white;
+      width: 230px;
+    }
+
+    .feature-list {
+      padding-top: 14px;
+      margin-left: 40px;
+    }
+
+    .feature-list img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .feature-list h6 {
+      font-size: small;
+      padding-left: 10px;
+      font-weight: bold;
+      padding-top: 10px;
+    }
+
+    .pricing-card .img {
+      display: flex;
+      justify-content: center;
+    }
+
+    .pricing-card .img img {
+      max-width: 100px;
+    }
+
+    .container-fluid {
+      background-color: #ddd2d3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-3">
+    <ul class="nav justify-content-center align-items-center " style="margin-left: 40px;">
+      <h3 style="font-weight: bold;">Medical Hardy</h3>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: #96BB7C; padding-left: 40px;">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: #96BB7C;">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: #96BB7C;">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: #96BB7C;">Contact</a>
+      </li>
+      <div class="ml-auto d-flex align-items-center">
+        <div class="btn-container" style="margin-right: 120px;">
+          <button class="btn bg-transparent" style="color: #96BB7C; margin-right: 5px;">Login</button>
+          <div style="padding-left: 25px;">
+            <button type="button" class="btn  btn-lg" style="background-color: #96BB7C; color: white;">
+              Learn More <i class="fas fa-arrow-right ml-2" style="color: white;"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </ul>
+  </div>
+  <div class="container" style="padding-top: 50px; ;">
+    <div class="row">
+      <div class="col-md-6" style="padding-left: 50px; padding-top: 100px;">
+        <h5 style="color: #96BB7C;">Online</h5>
+        <br>
+        <div>
+          <h1 style="font-size: 43px; font-weight: bold;">HIGH QUALITY <br> COURSES </h1>
+        </div>
+        <br>
+        <div>
+          <h5 style="color: #737373; font-weight: light;">Every day brings with it a fresh set of <br>
+            learning
+            possibilities.</h5>
+        </div>
+        <div class="btn" style="padding-top: 40px; gap: 40px;">
+          <button type="button" class="btn  btn-lg" style="background-color: #96BB7C;">Get Quote Now</button>
+
+          <button style=" border-color:#96BB7C ; margin-left: 20px; color: #96BB7C;" type="button" class="btn btn-light btn-lg">Learn
+            More</button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img src="col-md-6.png" class="img-fluid" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="padding-top: 112px; width: 70%;">
+    <h5 style="color: #96BB7C;">Practice Advice</h5>
+    <h1 style="font-weight: bold;">Our Popular Courses</h1>
+    <p style="font-weight: bold; color: #737373;">Problems trying to resolve the conflict between <br>
+      the two major realms of Classical physics: Newtonian mechanics </p>
+    <div class="row " style="padding-top: 70px;">
+      <div class="col-md-3 " ">
+                <div class=" shadow" style="padding-top: 30px; padding-left: 35px; padding-bottom: 15px;">
+        <img src="1.svg" alt="">
+        <p style="font-weight: bolder;">training Courses</p>
+        <img src="line1.png" alt="">
+        <p style="font-size: small; color: #737373;">The gradual <br>
+          accumulation of <br>
+          information about </p>
+      </div>
+    </div>
+    <div class="col-md-3 ">
+      <div class="shadow" style="padding-top: 30px; padding-left: 35px; padding-bottom: 15px;">
+        <img src="2.svg" alt="">
+        <p style="font-weight: bolder;">training Courses</p>
+        <img src="line1.png" alt="">
+        <p style="font-size: small; color: #737373;">The gradual <br>
+          accumulation of <br>
+          information about </p>
+      </div>
+    </div>
+    <div class="col-md-3 ">
+      <div class="shadow"
+        style="background-color: #96BB7C; padding-top: 30px; padding-left: 35px; color: white; padding-bottom: 15px;">
+        <img src="3.svg" alt="">
+        <p style="font-weight: bolder;">training Courses</p>
+        <img src="white_line.png" alt="">
+        <p style="font-size: small; color: #ffffff;">The gradual <br>
+          accumulation of <br>
+          information about </p>
+      </div>
+    </div>
+    <div class="col-md-3 ">
+      <div class="shadow" style="padding-top: 30px; padding-left: 35px; padding-bottom: 15px;">
+        <!-- <div style="padding-left: 35px;"> -->
+        <img src="4.svg" alt="">
+        <p style="font-weight: bolder;">training Courses</p>
+        <img src="line1.png" alt="">
+        <p style="font-size: small; color: #737373;">The gradual <br>
+          accumulation of <br>
+          information about </p>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  </div>
+
+
+
+
+  <div class="container" style=" padding-top: 260px; justify-content: space-between;">
+    <div class="row py-5  align-items-center  " style="justify-content: space-between;">
+
+      <div class=" col-lg-6  col-12 d-flex" style="justify-content: space-evenly;">
+        <img src="girl1.png" class="img-fluid" alt="...">
+      </div>
+      <div class=" col-lg-6  col-12" style="padding-left: 85px;">
+        <img src="line.png" alt="">
+        <br><br>
+        <h1 style="font-weight: bold;">Get Quality <br>
+          Education</h1>
+        <p>Problems trying to resolve the conflict between <br>
+          the two major realms of Classical physics: <br> Newtonian mechanics </p>
+        <br>
+
+        <div class="row" style="padding-left: 40px;">
+          <p style="font-size: 17px; margin: 0; color: #96BB7C; font-weight: bolder; padding-bottom: 15px;">
+            Learn More
+          </p>
+          <div style="width: 15px; margin-left: 5px; padding-bottom: 15px;">
+            <img src="Vector.png" width="10px" class="img-fluid" alt="">
+          </div>
+          <br>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="container" style="width: 80%; padding-top: 160px;">
+    <div class="row py-5  align-items-center ">
+
+
+      <div class=" col-lg-6  col-12">
+        <img src="line.png" alt="">
+        <h3 style="font-weight: bold;">Approdable Packages </h3>
+        <p>Problems trying to resolve the conflict between <br>
+          the two major realms of Classical physics: Newtonian mechanics </p>
+        <br><br>
+        <div class="row" style="padding-left: 40px;">
+          <p style="font-size: 17px; margin: 0; color: #96BB7C; font-weight: bolder; padding-bottom: 15px;">
+            Learn More
+          </p>
+          <div style="width: 15px; margin-left: 5px; padding-bottom: 15px;">
+            <img src="Vector.png" width="10px" class="img-fluid" alt="">
+          </div>
+          <br>
+        </div>
+
+      </div>
+      <div class=" col-lg-6  col-12 d-flex" style="justify-content:end">
+        <img src="video.png" class="img-fluid" alt="...">
+      </div>
+
+    </div>
+  </div>
+  <div class="container mt-5 " style="width: 70%; padding-top: 100px;">
+    <h5 style="color: #96BB7C;">Courses</h5>
+    <h2 style="font-weight: bold;">Most Popular Courses</h2>
+    <p>Problems trying to resolve the conflict between <br>
+      the two major realms of Classical physics: Newtonian mechanics </p>
+    <div class="header" style="padding-top: 70px;">
+      <div class="card">
+        <div class="card-icons">
+          <i class="fas fa-heart"></i>
+          <i class="fas fa-share-alt"></i>
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <img src="4.png" alt="">
+        <div class="sale-badge">Sale</div>
+        <div class="card-text">
+          <div class="row">
+            <p style="color: #96BB7C; font-size: smaller; margin-left: 5px; padding-top: 5px; font-weight: bold;">
+              Training Courses</p>
+            <div class="img">
+              <img src="frame.png" height="5px" width="5px" style="margin-left: 10px;">
+            </div>
+
+          </div>
+
+          <h4 style="font-size: 14px; font-weight: bolder; justify-content: first baseline; text-align: start;">
+            Video in Live
+            Action</h4>
+          <p style="font-size: 12px;  text-align: start;">We focus on ergonomicsand meeting you....</p>
+
+          <div class="row">
+            <div class="img" style="width: 15px; margin-left: 5px;">
+              <img src="download.png" style="margin-left: 5px;" height="2px" width="2px" alt="">
+            </div>
+            <p style="margin-left: 7px; font-size: 15px; ">15 Sales</p>
+          </div>
+          <p style="font-weight: bolder; text-align: start;"><span style="color: #96BB7C;">$16.48</span> <span
+              style="color: #FFAB71;">$6.48</span></p>
+          <div class="img-btn" style="height: 80px; width: 120px;">
+            <img src="button Sm sec-.png" class="img-fluid" width="60%" height="60px" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icons">
+          <i class="fas fa-heart"></i>
+          <i class="fas fa-share-alt"></i>
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <img src="2.png" alt="Product 2">
+        <div class="sale-badge">Sale</div>
+        <div class="card-text">
+          <div class="row">
+            <p style="color: #96BB7C; font-size: smaller; margin-left: 5px; padding-top: 5px; font-weight: bold;">
+              Training Courses</p>
+            <div class="img">
+              <img src="frame.png" height="5px" width="5px" style="margin-left: 10px;">
+            </div>
+
+          </div>
+
+          <h4 style="font-size: 14px; font-weight: bolder; justify-content: first baseline; text-align: start;">
+            Video in Live
+            Action</h4>
+          <p style="font-size: 12px;  text-align: start;">We focus on ergonomicsand meeting you....</p>
+
+          <div class="row">
+            <div class="img" style="width: 15px; margin-left: 5px;">
+              <img src="download.png" style="margin-left: 5px;" height="2px" width="2px" alt="">
+            </div>
+            <p style="margin-left: 7px; font-size: 15px; ">15 Sales</p>
+          </div>
+          <p style="font-weight: bolder; text-align: start;"><span style="color: #96BB7C;">$16.48</span> <span
+              style="color: #FFAB71;">$6.48</span></p>
+          <div class="img-btn" style="height: 80px; width: 120px;">
+            <img src="button Sm sec-.png" class="img-fluid" width="60%" height="60px" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icons">
+          <i class="fas fa-heart"></i>
+          <i class="fas fa-share-alt"></i>
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <img src="1.png" alt="Product 3">
+        <div class="sale-badge">Sale</div>
+        <div class="card-text">
+          <div class="row">
+            <p style="color: #96BB7C; font-size: smaller; margin-left: 5px; padding-top: 5px; font-weight: bold;">
+              Training Courses</p>
+            <div class="img">
+              <img src="frame.png" height="5px" width="5px" style="margin-left: 10px;">
+            </div>
+
+          </div>
+
+          <h4 style="font-size: 14px; font-weight: bolder; justify-content: first baseline; text-align: start;">
+            Video in Live
+            Action</h4>
+          <p style="font-size: 12px;  text-align: start;">We focus on ergonomicsand meeting you....</p>
+
+          <div class="row">
+            <div class="img" style="width: 15px; margin-left: 5px;">
+              <img src="download.png" style="margin-left: 5px;" height="2px" width="2px" alt="">
+            </div>
+            <p style="margin-left: 7px; font-size: 15px; ">15 Sales</p>
+          </div>
+          <p style="font-weight: bolder; text-align: start;"><span style="color: #96BB7C;">$16.48</span> <span
+              style="color: #FFAB71;">$6.48</span></p>
+          <div class="img-btn" style="height: 80px; width: 120px;">
+            <img src="button Sm sec-.png" class="img-fluid" width="60%" height="60px" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icons">
+          <i class="fas fa-heart"></i>
+          <i class="fas fa-share-alt"></i>
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <img src="3.png" alt="Product 4">
+        <div class="sale-badge">Sale</div>
+        <div class="card-text">
+          <div class="row">
+            <p style="color: #96BB7C; font-size: smaller; margin-left: 5px; padding-top: 5px; font-weight: bold;">
+              Training Courses</p>
+            <div class="img">
+              <img src="frame.png" height="5px" width="5px" style="margin-left: 10px;">
+            </div>
+
+          </div>
+
+          <h4 style="font-size: 14px; font-weight: bolder; justify-content: first baseline; text-align: start;">
+            Video in Live
+            Action</h4>
+          <p style="font-size: 12px;  text-align: start;">We focus on ergonomicsand meeting you....</p>
+
+          <div class="row">
+            <div class="img" style="width: 15px; margin-left: 5px;">
+              <img src="download.png" style="margin-left: 5px;" height="2px" width="2px" alt="">
+            </div>
+            <p style="margin-left: 7px; font-size: 15px; ">15 Sales</p>
+          </div>
+          <p style="font-weight: bolder; text-align: start;"><span style="color: #96BB7C;">$16.48</span> <span
+              style="color: #FFAB71;">$6.48</span></p>
+          <div class="img-btn" style="height: 80px; width: 120px;">
+            <img src="button Sm sec-.png" class="img-fluid" width="60%" height="60px" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container pricing-container">
+    <h6 style="color: #96BB7C;">Practice Advice</h6>
+    <h2 style="font-weight: bold;">Our Experts Teacher</h2>
+    <p style="color: #737373;">Problems trying to resolve the conflict between <br> the two major realms of Classical
+      physics: Newtonian mechanics</p>
+    <div class="row pricing-row" style="padding-top: 100px;">
+      <div class="col-md-4 pricing-card">
+        <div class="img">
+          <img src="circle.png" alt="">
+        </div>
+        <h3>FREE</h3>
+        <p>Organize across all <br> apps by hand</p>
+        <h1>19$</h1>
+        <h6>Per Month</h6>
+        <p>Slate helps you see how <br> many days you need...</p>
+        <button type="button" class="btn btn-lg">Try for free</button>
+        <div class="feature-list">
+          <div class="d-flex gap-1 align-items-center">
+            <img src="tick.png" alt="">
+            <h6>Unlimited product updates</h6>
+          </div>
+        </div>
+        <div class="feature-list">
+          <div class="d-flex gap-1 align-items-center">
+            <img src="tick.png" alt="">
+            <h6>Unlimited product updates</h6>
+          </div>
+        </div>
+        <div class="feature-list">
+          <div class="d-flex gap-1 align-items-center">
+            <img src="tick.png" alt="">
+            <h6>Unlimited product updates</h6>
+          </div>
+        </div>
+        <div class="feature-list">
+          <div class="d-flex gap-1 align-items-center">
+            <img src="tick1.png" alt="">
+            <h6>Unlimited product updates</h6>
+          </div>
+        </div>
+        <div class="feature-list">
+          <div class="d-flex gap-1 align-items-center">
+            <img src="tick1.png" alt="">
+            <h6>Unlimited product updates</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 pricing-card" style="background-color: #2D4059; box-shadow: #737373; position: relative;">
+        <div class="img" style="position: absolute; top: -40px; right: -30px;">
+          <img src="circle float off sec-.png" alt="">
+        </div>
+        <img src="circle.png" alt="">
+        <h3 style="color: #FFFFFF;">FREE</h3>
+        <p style="font-size: small; font-weight: bold; color: #FFFFFF;">Organize across all <br> apps by hand</p>
+        <h1 style="color: #96BB7C;">19$</h1>
+        <h6 style="color: #8EC2F2;">Per Month</h6>
+        <p style="color: #FFFFFF;">Slate helps you see how <br> many days you need...</p>
+        <button type="button" class="btn btn-lg">Try for free</button>
+        <div class="feature-list">
+          <div class="d-flex gap-1 align-items-center">
+            <img src="tick.png" alt="">
+            <h6>Unlimited product updates</h6>
+          </div>
+        </div>
+        <div class="feature-list">
+          <div class="d-flex gap-1 align-items-center">
+            <img src="tick.png" alt="">
+            <h6>Unlimited product updates</h6>
+          </div>
+        </div>
+        <div class="feature-list">
+          <div class="d-flex gap-1 align-items-center">
+            <img src="tick.png" alt="">
+            <h6>Unlimited product updates</h6>
+          </div>
+        </div>
+        <div class="feature-list">
+          <div class="d-flex gap-1 align-items-center">
+            <img src="tick1.png" alt="">
+            <h6>Unlimited product updates</h6>
+          </div>
+        </div>
+        <div class="feature-list">
+          <div class="d-flex gap-1 align-items-center">
+            <img src="tick1.png" alt="">
+            <h6>Unlimited product updates</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 pricing-card">
+        <div class="img">
+          <img src="circle.png" alt="">
+        </div>
+        <h3>FREE</h3>
+        <p>Organize across all <br> apps by hand</p>
+        <h1>19$</h1>
+        <h6>Per Month</h6>
+        <p>Slate helps you see how <br> many days you need...</p>
+        <button type="button" class="btn btn-lg">Try for free</button>
+        <div class="feature-list">
+          <div class="d-flex gap-1 align-items-center">
+            <img src="tick.png" alt="">
+            <h6>Unlimited product updates</h6>
+          </div>
+        </div>
+        <div class="feature-list">
+          <div class="d-flex gap-1 align-items-center">
+            <img src="tick.png" alt="">
+            <h6>Unlimited product updates</h6>
+          </div>
+        </div>
+        <div class="feature-list">
+          <div class="d-flex gap-1 align-items-center">
+            <img src="tick.png" alt="">
+            <h6>Unlimited product updates</h6>
+          </div>
+        </div>
+        <div class="feature-list">
+          <div class="d-flex gap-1 align-items-center">
+            <img src="tick1.png" alt="">
+            <h6>Unlimited product updates</h6>
+          </div>
+        </div>
+        <div class="feature-list">
+          <div class="d-flex gap-1 align-items-center">
+            <img src="tick1.png" alt="">
+            <h6>Unlimited product updates</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container" style="padding-top: 100px; width: 80%; padding-bottom: 180px;">
+    <div>
+      <h5 style="color: #96BB7C;">Testimonials</h5>
+      <h1>Video in Live Action</h1>
+      <p style="color: #737373;">Problems trying to resolve the conflict between <br>
+        the two major realms of Classical physics: Newtonian mechanics </p>
+      <div class="row justify-content-around " style="text-align: center; padding-top: 100px;">
+        <div class="col-4">
+          <img src="girl.png" class="img-fluid" alt="">
+          <p>Slate helps you see how many more days <br>
+            you need to work to reach your financial <br>
+            goal for the month and year.</p>
+          <img src="stars sec-.png" alt="">
+          <h5 style="font-weight: bold;">Regina Miles</h5>
+          <p style="font-weight: bold; font-size: small; color: #737373;">Designer</p>
+        </div>
+        <div class="col-4">
+          <img src="boy.png" class="img-fluid" alt="">
+          <p>Slate helps you see how many more days <br>
+            you need to work to reach your financial <br>
+            goal for the month and year.</p>
+          <img src="stars sec-.png" alt="">
+          <h5 style="font-weight: bold;">Regina Miles</h5>
+          <p style="font-weight: bold; font-size: small; color: #737373;">Designer</p>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+    <div class="container-fluid" style="background-color: #FFF2F3;">
+      <div class="container" style="text-align: center; padding-top: 160px;">
+        <div class="col-12 d-flex justify-content-center my-3">
+          <div class="input-group" style="max-width: 400px; width: 100%;">
+            <input type="text" class="form-control" placeholder="Enter your email">
+            <button class="btn " style="border: none; background-color: #96BB7C; color: white;"
+              type="button">Subscribe</button>
+          </div>
+        </div>
+        <h5 style="color: #96BB7C;">Newsletter</h5>
+        <h2 style="font-weight: bold;">Our Experts Teacher</h2>
+        <p style="color: #737373;">Problems trying to resolve the conflict between <br>
+          the two major realms of Classical physics: Newtonian mechanics </p>
+
+      </div>
+      <br><br><br>
+    </div>
+
+    <footer class="footer">
+      <div class="container" style="padding-top: 50px;">
+        <div class="row">
+          <div class="col-md-2">
+            <h6 style="font-weight: bold;">Company Info</h6>
+            <p>About us</p>
+            <p>carier</p>
+            <p>We are hiring</p>
+            <p>Blog</p>
+          </div>
+          <div class="col-md-2">
+            <h6 style="font-weight: bold;">Legal</h6>
+            <p>About us</p>
+            <p>We ar hiring</p>
+            <p>Blog</p>
+          </div>
+          <div class="col-md-2">
+            <h6 style="font-weight: bold;">Features</h6>
+            <p>Business Marketing</p>
+            <p>User Analytic</p>
+            <p>Live Chat</p>
+            <p>Unlimited Support</p>
+          </div>
+          <div class="col-md-3">
+            <h6 style="font-weight: bold;">Resources</h6>
+            <p>IOS & Android</p>
+            <p>Watch a Demo</p>
+            <p>Customers</p>
+            <p>API</p>
+          </div>
+          <div class="col-md-3">
+            <h6 style="font-weight: bold;">Get In Touch</h6>
+            <p><img src="bx_bx-phone.png" alt=""> (480) 555-0103</p>
+            <p><img src="Vector (7).png" alt=""> 4517 Washington Ave. Manchester, <br>
+              Kentucky 39495</p>
+            <p><img src="carbon_send-alt.png" alt=""> debra.holt@example.com</p>
+          </div>
+        </div>
+        <div class="container">
+        <div class="row" style="justify-content: space-between; padding-top: 50px;">
+          <div class="col-md-6">
+            <p>&copy; 2023 Your Company. All rights reserved.</p>
+          </div>
+          <div class="col-md-6" style="padding-left: 320px; ">
+
+
+            <img src="facebook (2).png" alt="">
+
+
+            <img src="instagram.png" alt="">
+
+            <img src="ant-design_twitter-outlined (1).png" alt="">
+
+        </div>
+      </div>
+      </div>
+  </div>
+  </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
